@@ -1,0 +1,31 @@
+body{
+  margin:0;
+  padding: 0 ;
+  background: linear-gradient(white, green);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: sans-serif;
+}
+
+.ctn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+p{
+  font-size: 5rem;
+}
+
+.btns button{
+  margin: 0 10px;
+  border: none;
+  padding: 12px;
+  width: 180px;
+  border-radius: 5px;
+  background-color: hsla(39, 74%, 27%, 0.571);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
