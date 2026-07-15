@@ -1,4 +1,4 @@
-import Counter from './Counter.jsx'
+import Counter from './projects/Counter/Counter'
 
 function App(){
 
