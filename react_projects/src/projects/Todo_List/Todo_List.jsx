@@ -1,8 +1,12 @@
 import './todolist.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function Todo_List(){
 
+    useEffect(()=>{
+        document.title = "To do List"
+    }, []);
+    
     const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
 

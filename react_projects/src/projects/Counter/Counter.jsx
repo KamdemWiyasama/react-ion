@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import './Counter.css';
 function Counter(){
+
+    useEffect(()=>{
+        document.title = "Counter"
+    }, []);
+    
     const [count, setCount] = useState(0);
 
     function increment(){
