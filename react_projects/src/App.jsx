@@ -1,4 +1,4 @@
-import Counter from './projects/Counter/Counter'
+import Counter from './projects/Todo_List/Todo_List'
 
 function App(){
 
