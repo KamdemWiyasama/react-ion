@@ -4,15 +4,16 @@ import {useState} from 'react'
 function Todo_List(){
 
     const [tasks, setTasks] = useState([]);
-    
-    const addTask =(e) =>{
-        const task = document.getElementById("newTask").value
-        setTasks([...tasks, task])
-        document.getElementById("newTask").value = ""
+    const [newTask, setNewTask] = useState("");
+
+    const addTask =() =>{
+        if (newTask.trim() === "") return;
+        setTasks(t=>[...t, newTask])
+        setNewTask("")
     }
 
     const deleteTask =(id)=>{
-        setTasks(tasks.filter((_, i) => id!==i))
+        setTasks(t => t.filter((_, i) => id!==i))
     }
     
     return(
@@ -21,12 +22,32 @@ function Todo_List(){
             <h1>To Do List Checklist</h1>
 
             <ul>
-                {tasks.map((task, id) => <li key={id}><input type="checkbox" onChange={() => deleteTask(id)}></input>{task} <button onClick={() => deleteTask(id)} className='trash' >🗑️</button></li>)}
+                {
+                tasks.map((task, id) => <li key={id}>
+                                            <input type="checkbox" onChange={() => deleteTask(id)}></input>
+                                            <span className='taskText'>{task}</span> 
+                                            <button onClick={() => deleteTask(id)} className='trash' >🗑️</button>
+                                        </li>)
+                }
             </ul>
         
 
-            <input id="newTask" type="text" placeholder="Add a task"></input>
-            <button className='add' onClick={addTask}>Add Task</button>
+            <input 
+                id="newTask" 
+                type="text" 
+                placeholder="Add a task" 
+                value={newTask} 
+                onChange={(e) => setNewTask(e.target.value)} 
+                onKeyDown={(e) => e.key === "Enter"? addTask() : null}>
+
+            </input>
+
+            <button 
+                className='add' 
+                onClick={addTask}>
+                Add Task
+            </button>
+
         </div>
         </>
         

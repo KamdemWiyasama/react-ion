@@ -32,16 +32,25 @@ ul li{
     list-style: none;
     width: 100%;
     display: flex;
+    align-items: center;
     gap: 30px;
     margin-bottom: 10px;
     font-weight: 100;
     font-size: 30px;
+    border: none;
+    padding: 2px;
+    border-radius: 6px;
+    background-color: rgb(204, 225, 203);
     
 
 }
 
+.taskText{
+    flex: 1;
+}
+
 .trash{
-    background-color: rgb(239, 144, 85);
+    background-color: rgb(235, 48, 23);
     border: grey;
     width: 40px;
     padding: 3px;
