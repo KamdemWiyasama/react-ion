@@ -1,9 +1,9 @@
-import Counter from './projects/Todo_List/Todo_List'
+import Weather from './projects/Weather_App(API)/Weather'
 
 function App(){
 
   return(
-    <><Counter/></>
+    <><Weather/></>
   )
 }
 export default App
